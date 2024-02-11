@@ -1,0 +1,59 @@
+.write{
+  padding: 30px 12vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.write-img{
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.upper-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.upper-form-left{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add{
+  width: 2.5vw;
+}
+
+.title{
+  padding: 2px 2px;
+  border: transparent;
+  outline: none;
+  font-size: 2.6vw;
+}
+
+.upper-form button{
+  padding: 1vw 2vw;
+  border: none;
+  background-color: rgb(161, 44, 161);
+  border-radius: 5px;
+  font-size: 1.6vw;
+  color: white;
+  cursor: pointer;
+}
+
+.upper-form button:hover{
+  background-color: rgb(181, 49, 181);
+}
+
+.text-area{
+  margin-top: 30px;
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 30px;
+  border: transparent;
+}

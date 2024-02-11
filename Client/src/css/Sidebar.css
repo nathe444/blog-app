@@ -1,0 +1,64 @@
+.side-bar{
+  max-width: 20vw;
+  padding: 5px 20px;
+  flex: 0.2;
+}
+
+.sidebar-img{
+  width: 20vw;
+  overflow: hidden;
+}
+
+.about-me{
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+ gap: 5px;
+ margin-top: 35px;
+}
+
+hr{
+  width: 20vw;
+}
+
+.side-bar h2{
+  margin: 0px;
+  font-size: 1.8vw;
+}
+
+.side-bar p{
+  font-size: 1.1vw;
+}
+
+.side-bar-top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: justify;
+}
+
+.category-options{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  text-align: center;
+  
+}
+
+.category-options p{
+  font-size: 1.6vw;
+}
+
+.sidebar-social ul{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.sidebar-social ul li{
+  list-style: none;
+}

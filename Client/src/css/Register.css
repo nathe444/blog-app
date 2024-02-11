@@ -1,0 +1,84 @@
+
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('.../../assets/blog-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 90vh;
+  position: relative;
+}
+
+.login-box{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: 1px solid gray;
+  padding: 20px 40px;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 2px 2px 1px rgba(11, 17, 72, 0.8), -2px -2px 1px rgba(7, 14, 60, 0.8);
+}
+
+.login-box h1{
+  color: rgb(120, 224, 202);
+  font-size: 40px;
+}
+
+.login-box p{
+  color: rgb(235, 222, 222);
+}
+
+.textbox input{
+  padding: 10px 10px;
+  width: 250px;
+  margin-top: 30px;
+  border: none;
+  outline: none;
+  border-bottom: 1px rgb(11, 8, 29) solid;
+  font-size: 18px;
+  background-color: transparent;
+  color: rgb(217, 202, 202);  
+}
+
+.register-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 10vw;
+  padding: 0.7vw 0.4vw;
+  background-color: rgb(154, 67, 154);
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 0.7vw;
+  font-size: 1.2vw;
+}
+
+.login-btn{
+  width: 150px;
+  padding: 10px 0px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(27, 3, 3);
+  color: white;
+  cursor: pointer;
+}
+
+.login-btn:hover{
+  background-color: rgb(43, 40, 40);
+}
+
+@media only screen and (max-width: 850px) {
+  .login-box p{
+    color: black;
+  }
+
+  .textbox input{
+    color:black
+  }
+}

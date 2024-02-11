@@ -1,0 +1,115 @@
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0px;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+.link{
+  text-decoration: none;
+  color: black;  
+  overflow: hidden;
+  position: relative;  
+  transition:0.2s ease-in;
+}
+
+/* .link::before{
+  content: '';
+  position: absolute;
+  bottom:  1px;
+  left:  0;
+  width:  0;
+  height: 2px;
+  background: gray;
+  transition: width  0.38s ease-in-out;
+} */
+
+/* .link:hover::before {
+  width:  100%; }/* Full width on hover */
+
+
+
+.header__left h2{
+  font-size: 2.3vw;
+}
+
+.header__middle ul{
+  display: flex;
+  justify-content: space-between;
+  gap: 3vw;
+  margin-left: 4vw;
+}
+
+Link{
+  text-decoration: none;
+  list-style: none;
+}
+
+.header__right{
+  display: flex;
+  align-items: center;
+}
+
+.login-register{
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.login-register .header-register-btn{
+  padding: 5px 10px;
+  font-size: 1.2vw;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-register .header-login-btn{
+  padding: 5px 10px;
+  font-size: 1.2vw;
+  background-color: rgb(99, 65, 65);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-register button:hover{
+  cursor: pointer;
+}
+
+.header__right ul{
+  display: flex;
+  justify-content: space-between;
+  gap: 1vw;
+  align-items: center;
+}
+
+.header__right li , .header__middle li{
+  list-style: none;
+}
+
+.search-and-profile{
+  display: flex;
+  align-items: center;
+  margin-right: 3vw;
+  gap: 1vw;
+}
+
+.profile-icon{
+  width: 2vw;
+}
+
+.icons{
+  width: 1.4vw;
+  cursor: pointer;
+}
+
+li{
+  font-size: 2vw;
+}

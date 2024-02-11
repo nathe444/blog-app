@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+
+.home{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.blog-h1{
+  position: absolute;
+  top:51px;
+  font-family: 'Carattere', cursive;
+  font-size: 145px;
+  z-index: 1;
+  color:#d0d5d7;
+}
+
+.blog-image{
+  object-fit: contain;
+  width: 98.9vw;
+  height: 50vw;
+  object-fit: cover;
+  margin-top: 115px;
+  opacity: 0.95;
+}
+
+
+
+.post-and-sidebar{
+  display: flex;
+ flex: 1;
+ 
+}

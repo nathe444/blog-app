@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+.settings{
+  
+}
+
+.settings{
+  display: flex;
+}
+
+.update-info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px 5vw;
+  gap: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.update-info-top h1{
+  font-size: 2vw;
+  color: green;
+  word-spacing: 0.1px;
+}
+
+.update-info-top p{
+  font-size: 1.5vw;
+  color: red;
+}
+
+.update-info-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.update-info-middle p{
+  font-size: 1.5vw;
+  margin-bottom: 10px;
+}
+
+.profile-container{
+  display:flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-picture{
+  width: 6.5vw;
+  height: 6.5vw;
+  border-radius: 20px;
+}
+
+.user-icon{
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+}
+
+.update-info-bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.update-info-input{
+  width: 100%;
+  padding: 10px 0px ;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 20px;
+}
+
+.update-info-button{
+  padding: 15px 5px;
+  width: 150px;
+  margin: 0 auto;
+  background-color: rgb(97, 25, 163);
+  color: rgb(246, 242, 242);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.update-info-button:hover{
+  background-color: rgb(112, 36, 184);
+}
