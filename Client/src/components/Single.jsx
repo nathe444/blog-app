@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/SinglePost.css'
 import Sidebar from './Sidebar'
 import SinglePost from './SinglePost'
-import '../css/single.css'
+import '../css/Single.css'
 
 const Single = () => {
   return (

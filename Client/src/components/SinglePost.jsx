@@ -1,15 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/SinglePost.css'
+import { useLocation ,useParams} from 'react-router-dom'
+import axios from "axios"
+import {Link} from "react-router-dom";  
 
 const SinglePost = () => {
+
+const [singlePost , setSinglePost]=useState([]);
+
+const location = useLocation();
+const path = location.pathname.split("/")[2];
+
+// can use both params and location
+// const {postId}= useParams();
+// console.log(postId);
+// console.log(path);
+
+useEffect(()=>{
+  const fetchPost = async ()=>{
+    const res = await axios.get("/api/posts/" + path);
+    setSinglePost(res.data)
+  } 
+  fetchPost()
+},[])
+
   return (
     <div>
 
       <div className='single-post-details'>
-      <img src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className='single-post-img'/>
+
+        {singlePost.img && <img src={singlePost.img} alt="" className='single-post-img'/>}
+      
+      {/* <img src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className='single-post-img'/> */}
 
       <div className='details-top'>
-      <h1 className='single-post-title'>Lorem ipsum dolor sit amet</h1>
+      <h1 className='single-post-title'>{singlePost.title}</h1>
 
       <div className='single-post-icons-contianer'>
       <img className='single-post-icons' src="/assets/edit.png" alt="" />
@@ -20,11 +45,15 @@ const SinglePost = () => {
       </div>
 
       <div className='details-middle'>
-        <p>Author:<span style={{color:"orange"}}>John</span></p>
-        <p>1 hour ago</p>
+        <p>Author:
+           <Link style={{textDecoration:"none"}} to={`/?user=${singlePost.username}`}>
+             <span style={{color:"orange"}}> 
+          {singlePost.username}</span>
+           </Link> </p>
+        <p>{new Date(singlePost.createdAt).toDateString()}</p>
       </div>
 
-      <p className='single-post-desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum error deleniti similique nesciunt quas, tenetur, officiis beatae suscipit nulla fugiat consequatur vel neque corrupti quod? Similique eum adipisci eius corporis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur et ipsum eaque deserunt animi quis tempora recusandae nam quidem. Eos quia recusandae dolor quos ipsa veritatis blanditiis provident debitis saepe. </p>
+      <p className='single-post-desc'>{singlePost.description} </p>
       
 
       </div>

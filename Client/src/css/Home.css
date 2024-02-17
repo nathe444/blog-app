@@ -10,7 +10,7 @@
 
 .blog-h1{
   position: absolute;
-  top:51px;
+  top:46px;
   font-family: 'Carattere', cursive;
   font-size: 145px;
   z-index: 1;
@@ -20,9 +20,9 @@
 .blog-image{
   object-fit: contain;
   width: 98.9vw;
-  height: 50vw;
+  height: 40vw;
   object-fit: cover;
-  margin-top: 115px;
+  margin-top: 110px;
   opacity: 0.95;
 }
 
@@ -32,4 +32,11 @@
   display: flex;
  flex: 1;
  
+}
+
+@media(max-width: 950px){
+  .blog-h1{
+    font-size: 80px;
+    margin-top: 30px;
+  }
 }

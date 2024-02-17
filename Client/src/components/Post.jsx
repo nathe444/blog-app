@@ -1,22 +1,23 @@
 import React from "react";
 import "../css/Post.css";
+import {Link} from "react-router-dom";
 
-function Post(props) {
+function Post({post}) {
   return (
     <div className="post">
-      <img
-        src={props.img}
-        className="post-image"
-      />
-
+      {post.image && <img src={post.image} className="post-image" />}
+    
       <div className="post-info">
         <div className="post-catagories">
-          <span className="post-catagory">Music</span>
-          <span className="post-catagory">Life</span>
+          {post.categories?.map((c)=>(
+            <span className="post-catagory">{c.name}</span>
+          ))}
         </div>
-        <span className="post-title">Lorem ipsum dolor sit amet</span>
-        <span className="post-date">1 hour ago</span>
-        <p className="post-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vel, nobis ullam libero suscipit sit odio sapiente illum, dolore soluta, deserunt repellendus necessitatibus? Doloribus, nesciunt! Aliquid ullam maiores porro quas?</p>
+       <Link style={{textDecoration:"none"}} to={`/post/${post._id}`}>
+       <span className="post-title">{post.title}</span>
+       </Link> 
+        <span className="post-date">{new Date(post.createdAt).toDateString()}</span> 
+        <p className="post-desc">{post.description}</p>
       </div>
 
 

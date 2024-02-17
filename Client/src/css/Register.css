@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('.../../assets/blog-2.jpg');
+  background-image: url('.../../assets/blog-3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
@@ -24,13 +24,22 @@
   box-shadow: 2px 2px 1px rgba(11, 17, 72, 0.8), -2px -2px 1px rgba(7, 14, 60, 0.8);
 }
 
+.register-form{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-box h1{
-  color: rgb(120, 224, 202);
+  color: rgb(0, 0, 0);
   font-size: 40px;
 }
 
 .login-box p{
-  color: rgb(235, 222, 222);
+  color: rgb(0, 0, 0);
 }
 
 .textbox input{
@@ -42,7 +51,12 @@
   border-bottom: 1px rgb(11, 8, 29) solid;
   font-size: 18px;
   background-color: transparent;
-  color: rgb(217, 202, 202);  
+  color: rgb(15, 13, 13);  
+}
+
+.textbox input::placeholder{
+  color: rgb(0, 0, 0);
+  background-color: transparent;
 }
 
 .register-btn{
@@ -75,10 +89,10 @@
 
 @media only screen and (max-width: 850px) {
   .login-box p{
-    color: black;
+    color: rgb(0, 0, 0);
   }
 
   .textbox input{
-    color:black
+    color:rgb(5, 3, 3)
   }
 }

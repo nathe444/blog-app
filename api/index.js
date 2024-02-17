@@ -7,10 +7,15 @@ const authRoute = require('./routes/auth');
 const usersRoute= require('./routes/users');
 const postsRoute= require('./routes/posts');
 const categoriesRoute = require('./routes/categories');
+const cors = require('cors');
 dotenv.config();
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URL).then(console.log('connected to MongoDb')).catch((err)=>console.log(err.message));
+
+app.use(cors({
+  origin:"*",
+}))
 
 
 const storage = multer.diskStorage({
@@ -32,6 +37,15 @@ app.use("/api/users", usersRoute);
 app.use("/api/posts" ,postsRoute );
 app.use("/api/categories",categoriesRoute);
 
-app.listen('5000' , ()=>{
-  console.log('server started on port 5000');
+app.get('/',(req,res)=>{
+  res.send('hello');
+})
+
+
+const port = process.env.PORT || 5000;
+
+
+
+app.listen(port , ()=>{
+  console.log(`server started on port ${port}`);
 })
