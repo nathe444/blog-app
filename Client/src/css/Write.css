@@ -6,7 +6,8 @@
 }
 
 .write-img{
-  width: 100%;
+  width: 70%;
+  margin: auto;
   height: 25vw;
   object-fit: cover;
   border-radius: 10px;
@@ -27,6 +28,7 @@
 
 .add{
   width: 2.5vw;
+  cursor: pointer;
 }
 
 .title{

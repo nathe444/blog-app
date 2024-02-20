@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import './css/App.css';
 import { BrowserRouter as Router,Route, Routes } from "react-router-dom";
@@ -9,15 +9,18 @@ import Write from "./components/Write";
 import Settings from "./components/Settings";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import { Context } from "./context/Context";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App(){
 
-  const [user,setUser]=useState(false);
+  const {user,isFetching,error} = useContext(Context);
 
   return(
     <Router>
-      <Header user={user}/>
+      <ScrollToTop />
+      <Header/>
       <Routes>
         <Route path={'/'} element={<> <Home/> </>}/>
         

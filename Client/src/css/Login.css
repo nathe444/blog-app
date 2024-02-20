@@ -68,6 +68,11 @@
   cursor: pointer;
 }
 
+.login-btn:disabled{
+  background-color: rgb(172, 27, 27);
+  cursor: not-allowed;
+}
+
 .login-btn:hover{
   background-color: rgb(43, 40, 40);
 }

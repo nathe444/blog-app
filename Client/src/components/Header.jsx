@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/Header.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Context } from "../context/Context";
 
-function Header(props) {
-  const user = props.user;
+function Header() {
 
+  const {dispatch , user} = useContext(Context);
+  const navigate = useNavigate();
 
   const style={
     color: "black",
@@ -12,6 +14,12 @@ function Header(props) {
     borderBottomStyle:"solid",
     borderBottomColor: "gray",
     
+  }
+
+  const handleLogout = ()=>{
+    dispatch({type:"LOG_OUT"})
+    // window.location.reload();
+    navigate('/');
   }
 
   return (
@@ -43,9 +51,9 @@ function Header(props) {
             <li>About</li>
           </NavLink>
 
-          <NavLink  className='link' to="logout" style={({isActive})=>(isActive ? style : null)}>
-            <li> {user && "Logout"}</li>
-          </NavLink>
+        
+            <li onClick={handleLogout} style={{cursor:"pointer"}}> {user && "Logout"}</li>
+          
         </ul>
       </div>
 
@@ -53,7 +61,7 @@ function Header(props) {
         {user ? (
           <div className="search-and-profile">
             <Link to="/settings">
-              <img className="profile-icon" src="/assets/profile.png" alt="" />
+              <img className="profile-icon" src={user.profilePic} alt="" />
             </Link>
             <img className="icons" src="/assets/search.png" alt="" />
           </div>

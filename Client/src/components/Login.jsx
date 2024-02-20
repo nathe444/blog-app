@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState ,useContext} from "react";
 import axios from 'axios';
 import { Context } from "../context/Context";
@@ -25,6 +25,7 @@ const Login = () => {
 
   const userRef = React.useRef();
   const passwordRef = React.useRef();
+  const navigate = useNavigate();
 
 
   const handleSubmit = async (e)=>{
@@ -38,15 +39,13 @@ const Login = () => {
       });
       //  console.log(res.data);
       dispatch({type:"LOGIN_SUCCESS",payload:res.data})
+      navigate('/');
     } catch(err){
       // console.log(err);
       dispatch({type:"LOGIN_FAILURE"})
-    }
-   
+    }  
   }  
-
-  console.log(isFetching);
-
+  
   return (
     <div className="login">
       <Link to={"/register"}>
@@ -66,7 +65,7 @@ const Login = () => {
             <input type="password" placeholder="Enter your password..." ref={passwordRef}/>
           </div>
 
-          <button className="login-btn">Login</button>
+          <button className="login-btn" disabled={isFetching} >Login</button>
         </div>
       </form>
     </div>

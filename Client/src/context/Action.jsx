@@ -12,4 +12,7 @@ export const LoginFailure = (user) =>({
   type : "LOGIN_FAILURE"
 });
 
+export const Logout = () =>({
+  type: "LOG_OUT",
+})
   

@@ -2,9 +2,10 @@ import React from "react";
 import "../css/Home.css";
 import Sidebar from "./Sidebar";
 import Posts from "./Posts";
-import { useState , useEffect } from "react";
+import { useState , useEffect , useContext } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { Context } from "../context/Context";
 
 
 function Home() {
@@ -15,6 +16,8 @@ function Home() {
 
   const [posts, setPosts]= useState([]);
 
+  const {user} = useContext(Context);
+
   useEffect(()=>{
     const fetchPosts = async ()=>{    
         const res = await axios.get("/api/posts"+search);   
@@ -22,8 +25,6 @@ function Home() {
     } 
     fetchPosts()
   },[search])
-
-  console.log(search);
 
   return (
     <div>
