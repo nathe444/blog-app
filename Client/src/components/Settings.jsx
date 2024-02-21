@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Settings.css'
 import Sidebar from './Sidebar'
 
 const Settings = () => {
+
+const [image , setImage]= useState(null);
+
+  if(image){
+    const data = new FormData();
+      const filename = Date.now() + image.name;
+      data.append("name", filename);
+      data.append("file", image);
+  }
+      
   return (
     <div className='settings'>
 
@@ -19,13 +29,13 @@ const Settings = () => {
       </p>
         <div className='profile-container'>
 
+{image && <img src={URL.createObjectURL(image)} alt="" className='profile-picture' />}
 
-        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""  className='profile-picture' />
 
           <label htmlFor="fileInput">
           <img src="/assets/profile.png" alt="" className='user-icon' />
           </label>
-          <input type="file" id="fileInput" style={{display:"none"}}/>
+          <input type="file" id="fileInput" style={{display:"none"}} onChange={(e)=>setImage(e.target.files[0])}/>
          
         </div>
 

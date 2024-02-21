@@ -6,7 +6,10 @@
   padding: 15px 0px;
   position: sticky;
   top: 0px;
-  z-index: 1;
+  z-index: 10;
+  background: rgb(27,47,148);
+background: radial-gradient(circle, rgba(27,47,148,1) 0%, rgba(243,236,245,1) 0%, rgba(249,246,246,1) 76%);
+box-shadow: 0 2.2px 10px rgba(131, 125, 125, 0.7);
 }
 
 .link{
@@ -100,7 +103,6 @@ Link{
   align-items: center;
   justify-content: center;
   margin-right: 3vw;
-  gap: 1vw;
 }
 
 .profile-icon{
@@ -113,6 +115,12 @@ Link{
 .icons{
   width: 1.4vw;
   cursor: pointer;
+}
+
+.search-icon{
+  margin-left: 5px;
+  height: 1.8vw;
+  width: 2vw;
 }
 
 li{

@@ -59,11 +59,12 @@ function Header() {
 
       <div className="header__right">
         {user ? (
-          <div className="search-and-profile">
+          <div className="search-and-profile tooltip">
             <Link to="/settings">
               <img className="profile-icon" src={user.profilePic} alt="" />
+              <span class="tooltiptext">Edit Profile</span>
             </Link>
-            <img className="icons" src="/assets/search.png" alt="" />
+            <img className="icons search-icon" src="/assets/search.png" alt="" />
           </div>
         ) : (
           <div className="login-register">

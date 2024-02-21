@@ -66,7 +66,11 @@ const Write = () => {
         <div className="upper-form">
           <div className="upper-form-left">
             <label htmlFor="fileInput">
+              <div className="tooltip">
               <img src="/assets/add.png" alt="" className="add" />
+              <span class="tooltiptext">Add Image</span>
+              </div>
+              
             </label>
 
             <input type="text" placeholder="Title" className="title" name='title' onChange={handleChange}/>
