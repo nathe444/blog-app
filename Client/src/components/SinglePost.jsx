@@ -46,6 +46,8 @@ const SinglePost = () => {
     setEditMode(false);
   }
 
+  console.log(singlePost);
+
   return (
     <div>
       <div className="single-post-details">

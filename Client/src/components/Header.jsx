@@ -4,23 +4,23 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Context } from "../context/Context";
 
 function Header() {
-
-  const {dispatch , user} = useContext(Context);
+  const { dispatch, user } = useContext(Context);
   const navigate = useNavigate();
 
-  const style={
-    color: "black",
-    borderBottomWidth: '0.3vw',
-    borderBottomStyle:"solid",
-    borderBottomColor: "gray",
-    
-  }
+  const pf = "http://localhost:5000/images/";
 
-  const handleLogout = ()=>{
-    dispatch({type:"LOG_OUT"})
+  const style = {
+    color: "black",
+    borderBottomWidth: "0.3vw",
+    borderBottomStyle: "solid",
+    borderBottomColor: "gray",
+  };
+
+  const handleLogout = () => {
+    dispatch({ type: "LOG_OUT" });
     // window.location.reload();
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <div className="header">
@@ -32,28 +32,42 @@ function Header() {
 
       <div className="header__middle">
         <ul>
-          <NavLink  className='link' to="/" style={({isActive})=>(isActive ? style : null)}>
+          <NavLink
+            className="link"
+            to="/"
+            style={({ isActive }) => (isActive ? style : null)}
+          >
             <li>Home</li>
           </NavLink>
 
-          <NavLink  className='link' to="write" style={({isActive})=>(isActive ? style : null)}>
+          <NavLink
+            className="link"
+            to="write"
+            style={({ isActive }) => (isActive ? style : null)}
+          >
             <li>Write</li>
           </NavLink>
 
-          <NavLink  className='link'
+          <NavLink
+            className="link"
             to="/contact"
-            style={({isActive})=>(isActive ? style : null)}
+            style={({ isActive }) => (isActive ? style : null)}
           >
             <li>Contact</li>
           </NavLink>
 
-          <NavLink  className='link' to="/about" style={({isActive})=>(isActive ? style : null)}>
+          <NavLink
+            className="link"
+            to="/about"
+            style={({ isActive }) => (isActive ? style : null)}
+          >
             <li>About</li>
           </NavLink>
 
-        
-            <li onClick={handleLogout} style={{cursor:"pointer"}}> {user && "Logout"}</li>
-          
+          <li onClick={handleLogout} style={{ cursor: "pointer" }}>
+            {" "}
+            {user && "Logout"}
+          </li>
         </ul>
       </div>
 
@@ -61,10 +75,10 @@ function Header() {
         {user ? (
           <div className="search-and-profile tooltip">
             <Link to="/settings">
-              <img className="profile-icon" src={user.profilePic} alt="" />
+              <img className="profile-icon" src={pf + user.profilePic} alt="" />
               <span class="tooltiptext">Edit Profile</span>
             </Link>
-            <img className="icons search-icon" src="/assets/search.png" alt="" />
+            {/* <img className="icons search-icon" src="/assets/search.png" alt="" /> */}
           </div>
         ) : (
           <div className="login-register">

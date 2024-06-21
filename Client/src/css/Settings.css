@@ -43,14 +43,14 @@
 }
 
 .profile-picture{
-  width: 6.5vw;
-  height: 6.5vw;
-  border-radius: 20px;
+  width: 4.5vw;
+  height: 4.5vw;
+  border-radius: 50%;
 }
 
 .user-icon{
-  width: 3vw;
-  height: 3vw;
+  width: 2.5vw;
+  height: 2.5vw;
   cursor: pointer;
 }
 

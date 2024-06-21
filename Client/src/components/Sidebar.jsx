@@ -1,20 +1,18 @@
-import React, { useEffect ,useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Sidebar.css";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
-
   const [categories, setCategories] = useState([]);
 
-  useEffect(()=>{
-    const getCatagories = async()=>{
+  useEffect(() => {
+    const getCatagories = async () => {
       const res = await axios.get("/api/categories");
       setCategories(res.data);
-    } 
+    };
     getCatagories();
-  },[])
-
+  }, []);
 
   return (
     <div className="side-bar">
@@ -27,11 +25,15 @@ function Sidebar() {
 
         <img src="/assets/blog.jpg" className="sidebar-img" alt="" />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-          recusandae debitis quia quam nobis rerum dolor facilis nam eos nulla?
-          Iusto quae eveniet laboriosam, consequatur minima minus delectus. Qui,
-          maxime?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius
-          temporibus, molestias velit obcaecati tempora aliquid
+          I am a computer science student based in Addis Ababa, Ethiopia. My
+          journey in technology began with self-taught programming lessons in my
+          teens, which ignited a passion for innovation and problem-solving.
+          Throughout my studies, I have worked on projects ranging from
+          educational software to platforms supporting local entrepreneurs. My
+          goal is to make technology accessible to everyone, collaborating with
+          organizations to bring resources and training to underserved areas. In
+          my free time, I enjoy mentoring young developers and staying updated
+          on the latest tech trends.
         </p>
       </div>
 
@@ -42,13 +44,14 @@ function Sidebar() {
       </div>
 
       <div className="category-options">
-
-        {categories.map((c)=>(
-         <Link style={{textDecoration:"none",color:"black"}} to={`/?category=${c.name}`}>
-         <p>{c.name}</p>
-         </Link> 
+        {categories.map((c) => (
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to={`/?category=${c.name}`}
+          >
+            <p>{c.name}</p>
+          </Link>
         ))}
-
       </div>
 
       <div className="about-me">

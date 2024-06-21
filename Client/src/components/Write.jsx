@@ -10,9 +10,10 @@ const Write = () => {
 
   const [formData , setFormdata] = useState({
     title:"",
-    description:""
+    description:"",
   })
 
+  const [name , setName]=useState('');
   const [image, setImage] = useState(null);
   const { user } = useContext(Context);
 
@@ -25,12 +26,19 @@ const Write = () => {
     })
   }
 
+  const handleCategory =(e)=>{
+    setName(
+      e.target.value
+    )
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newPost = {
       username: user.username,
       title:formData.title,
       description:formData.description,
+      categories:name,
     };
 
     if (image) {
@@ -52,7 +60,17 @@ const Write = () => {
     } catch (err) {
       console.log(err);
     }
+
+    try{  
+      await axios.post("/api/categories" ,{
+        name:name
+      })
+      alert("Category created successfully")
+    } catch(err){
+      console.log(err);
+    }
   };
+
 
   return (
     <div className="write">
@@ -88,6 +106,7 @@ const Write = () => {
           name="description"
           onChange={handleChange}
         ></textarea>
+        <input type="text" placeholder="Category" className="title category" onChange={handleCategory} />
       </form>
     </div>
   );
